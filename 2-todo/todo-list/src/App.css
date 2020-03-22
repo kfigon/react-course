@@ -9,7 +9,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 body {
-  background-color: rgb(198, 198, 206);
+  background-image: linear-gradient(to left, rgb(102, 228, 250), rgb(3, 76, 160));
 }
 .btn {
   border-radius: 3px;
@@ -25,4 +25,8 @@ body {
 }
 .btn:hover{
   cursor: pointer;
+}
+
+li{
+  font-size: 20px;
 }
