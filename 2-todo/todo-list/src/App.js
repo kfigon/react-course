@@ -10,7 +10,7 @@ const Element = (props) => {
 const List = (props) => {
   return (
     <ul>
-      {props.tasks.map((theTask, idx) => <Element key={idx} task={theTask} removeTask={props.removeTask}/>)}
+      {props.tasks.map((theTask, idx) => <Element key={idx} task={theTask} removeTask={props.removeTask} />)}
     </ul>
   );
 }
@@ -24,14 +24,19 @@ class App extends React.Component {
     }
   }
 
+  // trzeba tutaj zmianic state na podstawie poprzedniego
+  // this.state.tasks moze spowodowac wyscig, bo react lubi robic zmiany batchowo
   addTask = () => {
-    const tasks = this.state.tasks;
-    const pendingText = this.state.pendingText;
-    if (pendingText) {
-      tasks.push(pendingText);
-      this.setState({ tasks: tasks, pendingText: '' });
-    }
+    this.setState(prevState => {
+      const prevTasks = prevState.tasks;
+      const pendingText = prevState.pendingText;
+      if (pendingText) {
+        return { tasks: prevTasks.concat(pendingText), pendingText: '' };
+      }
+      return prevState;
+    });
   }
+
   removeTask = (event) => {
     console.log(event);
 
@@ -50,7 +55,7 @@ class App extends React.Component {
         <h1>Yet another todo app</h1>
         <div>
           <input type="text" onChange={this.dataTyped} value={this.state.pendingText} />
-          <div className='btn'onClick={this.addTask}>Add task</div>
+          <div className='btn' onClick={this.addTask}>Add task</div>
         </div>
         <List tasks={this.state.tasks} removeTask={this.removeTask} />
       </div>
