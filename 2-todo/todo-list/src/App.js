@@ -1,16 +1,12 @@
 import React from 'react';
 import './App.css';
 
-const Element = (props) => {
-  return (
-    <li className='element' onClick={props.removeTask}>{props.task}</li>
-  );
-}
+const Element = props => <li className='element' onClick={() => props.removeTask(props.task)}>{props.task}</li>;
 
 const List = (props) => {
   return (
     <ul>
-      {props.tasks.map((theTask, idx) => <Element key={idx} task={theTask} removeTask={props.removeTask} />)}
+      {props.tasks.map((theTask, idx) => <Element key={idx} task={theTask} id={idx} removeTask={props.removeTask} />)}
     </ul>
   );
 }
@@ -19,7 +15,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      tasks: [],
+      tasks: ['asd', 'sad', 'three'],
       pendingText: ''
     }
   }
@@ -36,12 +32,13 @@ class App extends React.Component {
     });
   }
 
-  removeTask = (event) => {
-    console.log(event);
-
-    // const tasks = this.state.tasks;
-    // this.setState({ tasks: tasks });
-  }
+  removeTask = (taskToRemove) => {
+    this.setState(prevState => {
+      return {
+        tasks: prevState.tasks.filter(el => el !== taskToRemove)
+      }
+    });
+  };
 
   dataTyped = (event) => {
     const v = event.target.value;
