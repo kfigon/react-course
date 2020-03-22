@@ -1,13 +1,15 @@
 import React from 'react';
 import MonsterList from './components/monster-list/MonsterList';
 import './App.css';
+import SearchBox from './components/search-box/SearchBox';
 
 class App extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      monsters: []
+      monsters: [],
+      filterText: ''
     };
   }
 
@@ -20,16 +22,28 @@ class App extends React.Component {
       .then(response => response.json())
       .then(data => {
         const users = data.map(this.mapResponseToMonster);
-        this.setState({monsters: users})
+        this.setState({monsters:users})
       });
+  }
+
+  filterMonster = (event) => {
+    const v = event.target.value || '';
+    this.setState({filterText: v});
+  }
+
+  getFilteredMonsters() {
+    const text = this.state.filterText;
+
+    return this.state.monsters
+      .filter(monster => monster.name.toLowerCase().includes(text));
   }
 
   render() {
     return (
       <div className="app">
         <h1>Monsters Rolodex</h1>
-        
-        <MonsterList monsters={this.state.monsters} />
+        <SearchBox searchFunction={this.filterMonster} />
+        <MonsterList  monsters={this.getFilteredMonsters()} />
       </div>
     );
   }
