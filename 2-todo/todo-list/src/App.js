@@ -30,10 +30,9 @@ class App extends React.Component {
     this.setState(prevState => {
       const prevTasks = prevState.tasks;
       const pendingText = prevState.pendingText;
-      if (pendingText) {
-        return { tasks: prevTasks.concat(pendingText), pendingText: '' };
-      }
-      return prevState;
+      return pendingText
+        ? { tasks: prevTasks.concat(pendingText), pendingText: '' }
+        : prevState;
     });
   }
 
