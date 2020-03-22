@@ -7,6 +7,7 @@ const Monster = (props) => {
       <div className="monster">
          <img src={getMonsterImage(props.id)} alt=""/>
          <h2>{props.monster.name}</h2>
+         <p>{props.monster.email}</p>
       </div>
    );
 }

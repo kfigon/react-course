@@ -1,14 +1,18 @@
 .monster {
-    width: 200px;
-    height: 250px;
-    border-radius: 5px;
-    border: 2px solid black;
-    background-image: linear-gradient(45deg, rgb(223, 223, 223), rgb(19, 180, 255));
-    margin: 10px;
-    padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-color: #95dada;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 25px;
+    cursor: pointer;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
     text-align: center;
+}
+
+.monster:hover{
+    transform:scale(1.05);
 }
