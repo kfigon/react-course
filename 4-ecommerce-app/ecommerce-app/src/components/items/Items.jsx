@@ -38,8 +38,8 @@ const getBigItems = () => sections.filter(el => !!el.size);
 const Items =() => {
     return(
         <div className='items'>
-                {getSmallItems().map((el,idx) => <SmallItem key={idx} headerName={el.title.toLocaleUpperCase()}/>)}
-                {getBigItems().map((el,idx) => <BigItem key={idx} headerName={el.title.toLocaleUpperCase()}/>)}
+                {getSmallItems().map((el,idx) => <SmallItem key={idx} image={el.imageUrl} headerName={el.title.toLocaleUpperCase()}/>)}
+                {getBigItems().map((el,idx) => <BigItem key={idx} image={el.imageUrl} headerName={el.title.toLocaleUpperCase()}/>)}
             </div>
     );
 }
