@@ -1,5 +1,5 @@
 import React from 'react';
-import {SmallItem, BigItem} from '../menu-item/MenuItem';
+import {Item} from '../menu-item/MenuItem';
 import './items.css';
 
 const sections = [
@@ -32,14 +32,11 @@ const sections = [
     }
   ];
 
-const getSmallItems = () => sections.filter(el => !el.size);
-const getBigItems = () => sections.filter(el => !!el.size);
 
 const Items =() => {
     return(
         <div className='items'>
-                {getSmallItems().map((el,idx) => <SmallItem key={idx} image={el.imageUrl} headerName={el.title.toLocaleUpperCase()}/>)}
-                {getBigItems().map((el,idx) => <BigItem key={idx} image={el.imageUrl} headerName={el.title.toLocaleUpperCase()}/>)}
+                {sections.map((el,idx) => <Item key={idx} image={el.imageUrl} size={el.size} headerName={el.title.toLocaleUpperCase()}/>)}
             </div>
     );
 }

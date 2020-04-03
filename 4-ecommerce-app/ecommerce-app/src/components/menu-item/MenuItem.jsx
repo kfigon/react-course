@@ -1,20 +1,10 @@
 import React from 'react';
 import './menuItem.css'
 
- export const SmallItem = (props) => {
+ export const Item = (props) => {
     return (
-        <div style={{backgroundImage:props.imageUrl}} className='small-item'>
-        <div className="item-description">
-            <h1>{props.headerName}</h1>
-            <span>SHOP NOW</span>
-        </div>
-    </div>
-    );
-}
-
-export const BigItem = (props) => {
-    return (
-        <div style={{backgroundImage:props.imageUrl}}className='big-item'>
+        <div style={{backgroundImage:`url(${props.image}`}} 
+        className={props.size === 'large' ? 'big-item' : 'small-item'}>
         <div className="item-description">
             <h1>{props.headerName}</h1>
             <span>SHOP NOW</span>
@@ -24,4 +14,4 @@ export const BigItem = (props) => {
 }
 
 
-export default SmallItem;
+export default Item;

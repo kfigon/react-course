@@ -7,9 +7,10 @@ body {
 }
 
 h1 {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
 }
 span {
-  font-size: 15px;
+  font-size: 18px;
+  font-weight: 550;
 }
