@@ -5,6 +5,7 @@
     background-position: center;
     background-size: cover;
     margin: 5px;
+    cursor: pointer;
 }
 
 .big-item{
@@ -14,6 +15,7 @@
     background-position: center;
     background-size: cover;
     margin: 5px;
+    cursor: pointer;
 }
 
 .item-description {

@@ -7,8 +7,9 @@ import './App.css';
 
 function App() {
   return (
+    // bez exact wyrenderuja sie oba w /hats, bo oba pasuja
       <Switch>
-        <Route exact path='/' component={Homepage} />
+        <Route exact path='/' component={Homepage} /> 
         <Route path='/hats' component={HatsPage} />
       </Switch>
   );
