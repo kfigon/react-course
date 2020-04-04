@@ -1,7 +1,7 @@
 .small-item{
     width: 25%;
     height: 300px;
-    border: 1px solid black;
+    border: 1px solid hsla(0, 0%, 47%, 0.514);
     background-position: center;
     background-size: cover;
     margin: 5px;
@@ -11,7 +11,7 @@
 .big-item{
     width: 40%;
     height: 300px;
-    border: 1px solid black;
+    border: 1px solid hsla(0, 0%, 47%, 0.514);
     background-position: center;
     background-size: cover;
     margin: 5px;
@@ -19,12 +19,11 @@
 }
 
 .item-description {
-    border: 1px solid hsla(0, 0%, 0%, 0.562);
+    border: 1px solid hsla(0, 0%, 47%, 0.514);
     width: 75%;
     text-align: center;
     margin: 100px auto;
     background-color: hsla(0, 0%, 100%, 0.678);
-    color: hsla(0, 3%, 6%, 0.959);
     border-radius: 2px;
 }
 

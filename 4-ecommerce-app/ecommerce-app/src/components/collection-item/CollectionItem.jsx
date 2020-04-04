@@ -3,7 +3,6 @@ import './collection-item.css';
 
 
 const CollectionItem = (props) => {
-    console.log(props);
 
     return (
         <div className="collection-item">

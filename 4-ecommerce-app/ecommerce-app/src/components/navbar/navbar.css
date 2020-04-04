@@ -1,0 +1,27 @@
+.links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 5px;
+    padding: 0;
+}
+.link {
+    /* margin: auto; */
+    margin: 0 5px;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 700;
+}
+.link:hover {
+    color: hsla(0, 0%, 24%, 0.473);
+    font-weight: 800;
+}
+.navbar {
+    width: 300px;
+    margin: 10px;
+    margin-left: auto;
+    border: 1px solid hsla(0, 0%, 27%, 0.192);
+    border-radius: 3px;
+    background-color: hsla(0, 0%, 27%, 0.26);   
+}

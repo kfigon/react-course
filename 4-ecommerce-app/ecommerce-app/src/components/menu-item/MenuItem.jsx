@@ -6,7 +6,7 @@ import './menuItem.css'
 // other way - we must prop drill `history` object from the Router in App
 const Item = (props) => {    
     return (
-        <div style={{ backgroundImage: `url(${props.image}` }}
+        <div style={{ backgroundImage: `url(${props.imageUrl}` }}
             className={props.size === 'large' ? 'big-item' : 'small-item'}
             onClick={() => props.history.push(`${props.match.url}${props.linkUrl}`)}>
 
