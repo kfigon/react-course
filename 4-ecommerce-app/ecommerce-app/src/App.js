@@ -7,10 +7,12 @@ import './App.css';
 
 function App() {
   return (
+    <div>      
       <Switch>
         <Route exact path='/' component={Homepage} /> 
         <Route path='/shop' component={ShopPage} />
       </Switch>
+      </div>
   );
 }
 

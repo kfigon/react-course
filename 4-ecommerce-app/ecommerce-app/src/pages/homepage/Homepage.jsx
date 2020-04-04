@@ -1,11 +1,15 @@
 import React from 'react';
 import Items from '../../components/items/Items';
+import { Link } from 'react-router-dom';
 import './homepage.css';
 
-const Homepage = () => {  
+const Homepage = () => {
     return (
-        <div className="homepage">
-            <Items/>
+        <div>
+            <Link to="/shop">SHOP</Link>
+            <div className="homepage">
+                <Items />
+            </div>
         </div>
     );
 };
