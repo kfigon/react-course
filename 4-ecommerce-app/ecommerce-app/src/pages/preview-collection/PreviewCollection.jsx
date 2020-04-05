@@ -4,8 +4,8 @@ import './preview-collection.css';
 
 const PreviewCollection = ({ title, items }) => {
     return (
-        <div className='collection-preview'>
-            <h1 className='title'>{title.toUpperCase()}</h1>
+        <div>
+            <h1 >{title.toUpperCase()}</h1>
             <div className='preview'>
                 {
                     items
