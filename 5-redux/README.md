@@ -1,3 +1,20 @@
+## Redux
+Jeden globalny obiekt (store) ze stanem. Komponenty nie tryzmaja stanu, otrzymuja tylko propsy. Ulatwia zarzadzanie duzym stanem w aplikacji. Nie trzeba przekazywac stanu wszedzie, unikamy props drilling
+
+### 3 principles of state in redux
+* single source of truth
+* state is read only
+* changes using pure functions
+
+nadal jest unidirection dataflow:
+
+action -> root reducer -> store -> dom change
+
+reducer - pure function that translates action to state
+
+uses flux pattern - action, dispatcher, store, view. One way data flow, always from action to view. Better than MVC (action->controler->model <-> view). View changes model and that changes everything
+
+-------------------------------
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
